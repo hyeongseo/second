@@ -1,0 +1,22 @@
+<h1>Listing Contents</h1>
+
+<%= link_to 'New Posts', new_content_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+  </tr>
+  <% @contents.each do |c| %>
+  <tr>
+    <td><%= c.title %></td>
+    <td><%= c.updated_at %></td>
+    <td><%= link_to 'Show', content_path(c)%></td>
+    <td><%= link_to 'Edit', edit_content_path(c)%></td>
+    <td><%= link_to 'Delete', content_path(c), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+  </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to 'My Contents', controller: 'contents' %>
+</p>

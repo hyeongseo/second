@@ -1,0 +1,15 @@
+<h1> CONTENT </h1>
+<div>
+  <p>
+    <strong>Title : </strong>
+    <%= @content.title %>
+  </p>
+  <p>
+    <strong>Body : </strong>
+    <%= @content.body %>
+  </p>
+</div>
+
+<%= link_to 'Edit', edit_content_path(@content) %>
+<%= link_to 'Delete', content_path(@content), method: :delete, data: {confirm: 'Are you sure?'}%>
+<%= link_to 'Back', contents_path %>
